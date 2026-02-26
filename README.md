@@ -1,5 +1,6 @@
 # adhd-brain
 A small app to help me keep track of my personal projects and task lists, while also serving as an example of my current coding style.
+Written with SpringBoot and PHP.
 # Current Status
 Planning phase. Not runnable yet. Check this readme for updated status, including build and deployment instructions.
 # Project Structure
