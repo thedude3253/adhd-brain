@@ -26,8 +26,10 @@
 	* PERMS (json string)
 * PUBLIC.TASK table // stores information about tasks tied to a project
 	* ID / PROJECT_UUID composite key
+	* NAME
+	* DESCRIPTION
 	* USER_UUID // UUID of the user account that generated the task
-	* STATUS // ENUM (new, in progress, complete)
+	* STATUS // SMALLINT (new 0, in progress 1, complete 2)
 * PUBLIC.NOTE table // stores non-task information about a project
 	* ID / PROJECT_UUID composite key
 	* NOTE // TEXT containing the note
