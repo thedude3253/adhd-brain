@@ -16,11 +16,11 @@ services:
     depends_on:
       - database
   ui-server:
-    image: php:8.2-apache
+    build: ./adhdappserver
     container_name: adhdbrain-ui
     ports:
       - "8080:80"
     volumes:
-      - ./adhdappserver:/var/www/html
+      - ./adhdappserver/src:/var/www
     depends_on:
       - api-server
