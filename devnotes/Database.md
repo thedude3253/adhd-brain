@@ -1,3 +1,4 @@
+Note: Leaving this here for the concepts contained, though the actual database structure will be managed by Spring Boot.
 # Structure
 * PUBLIC.USER table // stores user information
 	* UUID PK
