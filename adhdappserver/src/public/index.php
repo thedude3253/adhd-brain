@@ -7,6 +7,11 @@
             echo "Hello world~!";
             break;
 
+        case '/login':
+            http_response_code(200);
+            include('../template/login.php');
+            break;
+
         default:
             http_response_code(404);
             break;
