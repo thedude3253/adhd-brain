@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rowe.adhdapiserver.exception.UsernameAlreadyExistsException;
 import com.rowe.adhdapiserver.request.CreateProfileRequest;
 import com.rowe.adhdapiserver.service.ProfileService;
 
@@ -27,7 +28,7 @@ public class ProfileController {
 	}
 	
 	@PostMapping("/user")
-	public ResponseEntity<Void> createUser(@Valid @RequestBody CreateProfileRequest request) {
+	public ResponseEntity<Void> createUser(@Valid @RequestBody CreateProfileRequest request) throws UsernameAlreadyExistsException {
 		System.out.println("Attempting to create user: "+request.toString());
 		userService.createProfile(request);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
