@@ -11,4 +11,8 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> handleUsernameExists() {
 		return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already in use");
 	}
+	@ExceptionHandler(UsernameDoesNotExistException.class)
+	public ResponseEntity<String> handleUsernameDoesNotExist() {
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Username does not exist");
+	}
 }
