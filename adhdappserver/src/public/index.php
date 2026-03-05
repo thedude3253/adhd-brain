@@ -9,7 +9,12 @@
 
         case '/login':
             http_response_code(200);
-            include('../template/login.php');
+            include('../control/login.php');
+            break;
+        
+        case '/signup':
+            http_response_code(200);
+            include('../control/signup.php');
             break;
 
         default:

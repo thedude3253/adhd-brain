@@ -1,0 +1,18 @@
+<form action="/signup" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 300px;">
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required autofocus autocomplete="username">
+    </div>
+
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+    </div>
+
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <label for="confirmpassword">Retype Password</label>
+        <input type="password" id="confirmpassword" name="confirmpassword" required>
+    </div>
+
+    <button type="submit">Sign Up</button>
+</form>

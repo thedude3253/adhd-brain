@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rowe.adhdapiserver.request.CreateUserRequest;
-import com.rowe.adhdapiserver.service.UserService;
+import com.rowe.adhdapiserver.request.CreateProfileRequest;
+import com.rowe.adhdapiserver.service.ProfileService;
 
 import jakarta.validation.Valid;
 
 @RestController
-public class UserController {
-	private final UserService userService;
+public class ProfileController {
+	private final ProfileService userService;
 	
-	public UserController(UserService userService) {
+	public ProfileController(ProfileService userService) {
 		this.userService = userService;
 	}
 	
@@ -27,8 +27,9 @@ public class UserController {
 	}
 	
 	@PostMapping("/user")
-	public ResponseEntity<Void> createUser(@Valid @RequestBody CreateUserRequest request) {
-		userService.createUser(request);
+	public ResponseEntity<Void> createUser(@Valid @RequestBody CreateProfileRequest request) {
+		System.out.println("Attempting to create user: "+request.toString());
+		userService.createProfile(request);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 }
