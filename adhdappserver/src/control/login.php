@@ -17,7 +17,7 @@ If so, then before serving the page we need to validate their input by sending t
                 include('../template/loginform.html');
                 exit();
             }
-            $apiresponse = send_api_request('/auth/login', 'POST', [
+            $apiresponse = send_api_request('/auth', 'POST', [
                 'username' => $username,
                 'password' => $password
             ]);

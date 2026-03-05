@@ -2,6 +2,7 @@
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     
     switch($uri) {
+        case '/dashboard': //Should act identically to the root page
         case '/':
             http_response_code(200);
             session_start();
