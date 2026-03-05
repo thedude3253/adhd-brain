@@ -4,7 +4,15 @@
     switch($uri) {
         case '/':
             http_response_code(200);
-            echo "Hello world~!";
+            session_start();
+            if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+                //User is not logged in, show website information
+                include('../template/about.html');
+            }
+            else {
+                //User is logged in, show dashboard
+                include('../control/dashboard.php');
+            }
             break;
 
         case '/login':
