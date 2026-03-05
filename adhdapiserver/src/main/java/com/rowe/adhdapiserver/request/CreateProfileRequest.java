@@ -2,7 +2,7 @@ package com.rowe.adhdapiserver.request;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class CreateUserRequest {
+public class CreateProfileRequest {
 	
 	@NotBlank
 	private String username;
@@ -23,5 +23,10 @@ public class CreateUserRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    @Override
+    public String toString() {
+    	return String.format("Username:%s%nPassword:%s",username,password);
     }
 }

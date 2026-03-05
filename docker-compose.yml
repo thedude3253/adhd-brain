@@ -1,0 +1,26 @@
+services:
+  database:
+    image: postgres:15
+    container_name: adhdbrain-database
+    environment:
+      POSTGRES_DB: adhdbrain
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+  api-server:
+    build: ./adhdapiserver
+    container_name: adhdbrain-api
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: example
+      ADHD_DB_URL: jdbc:postgresql://database:5432/adhdbrain
+    depends_on:
+      - database
+  ui-server:
+    build: ./adhdappserver
+    container_name: adhdbrain-ui
+    ports:
+      - "8080:80"
+    volumes:
+      - ./adhdappserver/src:/var/www
+    depends_on:
+      - api-server
