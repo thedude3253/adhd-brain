@@ -1,5 +1,6 @@
 package com.rowe.adhdapiserver.data;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,21 +12,23 @@ public class Profile {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String displayName;
-	private String userName;
+	private String displayname;
+	
+	@Column(name="username", unique=true, nullable=false)
+	private String username;
 	private String hash;
 	
 	public String getDisplayName() {
-		return displayName;
+		return displayname;
 	}
 	public void setDisplayName(String newName) {
-		displayName = newName;
+		displayname = newName;
 	}
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 	public String getHash() {
 		return hash;
