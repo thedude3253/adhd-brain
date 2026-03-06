@@ -1,11 +1,14 @@
 <?php
+    
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     
     switch($uri) {
         case '/dashboard': //Should act identically to the root page
         case '/':
             http_response_code(200);
+            echo "<!DOCTYPE html>";
             session_start();
+            include('../template/header.php');
             if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 //User is not logged in, show website information
                 include('../template/about.html');
