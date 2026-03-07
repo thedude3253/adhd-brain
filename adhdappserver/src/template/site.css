@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0%;
+}
+nav {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    justify-items: center;
+    align-items: center;
+    border-radius: 15px;
+}
+body.darkmode {
+    /* background-color: #011627; */
+    background-color: #121212;
+    color: white;
+    font-family: lexend;
+    nav {
+        background-color: #1d1d1d;
+    }
+}
+body.lightmode {
+    background-color: white;
+    margin:0%;
+    nav {
+        background-color: #6D9DC5;
+    }
+}
