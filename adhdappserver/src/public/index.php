@@ -1,14 +1,12 @@
 <?php
-    
+    session_start();
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     
     switch($uri) {
+        //I'm conflicted here. On one hand, it makes sense to have the page creation be done inside each file, but on the other hand I would like to minimize code reuse.
+        //The limiting factor here is that we can't output any HTML until after we've ensured we don't need to do any redirects.
         case '/dashboard': //Should act identically to the root page
         case '/':
-            http_response_code(200);
-            echo "<!DOCTYPE html>";
-            session_start();
-            include('../template/header.php');
             if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 //User is not logged in, show website information
                 include('../template/about.html');
@@ -20,12 +18,10 @@
             break;
 
         case '/login':
-            http_response_code(200);
             include('../control/login.php');
             break;
         
         case '/signup':
-            http_response_code(200);
             include('../control/signup.php');
             break;
 
