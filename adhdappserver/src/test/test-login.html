@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../public/site.css">
+    </head>
+    <body class="darkmode">
+        <nav>
+            <div>LOGO</div>
+            <div>
+                <h1>Log In</h1>
+            </div>
+            <div>
+                <ul>
+                    <li style="margin-bottom: 0.5em;"><a href="/login">Log In</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <main>
+            <form action="/login" method="POST" style="grid-column: 2;">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required autofocus autocomplete="username" style="min-width: 16ch;">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password" style="min-width: 16ch;">
+                </div>
+                <div><button type="submit">Log In</button></div>
+            </form>
+        </main>
+    </body>
+</html>
