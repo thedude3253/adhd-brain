@@ -8,13 +8,13 @@
         case '/dashboard': //Should act identically to the root page
         case '/':
             if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-                //User is not logged in, show website information
-                include('../template/about.html');
+                header('Location: /about');     //Redirect new users to the landing page
             }
-            else {
-                //User is logged in, show dashboard
-                include('../control/dashboard.php');
-            }
+            include('../control/dashboard.php');
+            break;
+
+        case '/about':
+            include('../control/about.php');
             break;
 
         case '/login':
