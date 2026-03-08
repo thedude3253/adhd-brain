@@ -49,11 +49,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Log In</title>
-        <?php include('../template/head_include.html'); ?>
+        <?php include('../template/head_include.php'); ?>
     </head>
     <body class="darkmode">
-        <?php include('navbar.php'); ?>
+        <?php include('../template/navbar.php'); ?>
         <br>
         <main>
             <form action="/login" method="POST" style="grid-column: 2;">
@@ -77,6 +76,9 @@
                             break;
                         case 401:
                             echo('Incorrect username/password combination.');
+                            break;
+                        default:
+                            echo($error);
                             break;
                     }
                     echo('</div>');
