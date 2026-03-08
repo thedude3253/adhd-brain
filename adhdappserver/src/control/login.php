@@ -67,6 +67,21 @@
                 </div>
                 <div><button type="submit">Log In</button></div>
             </form>
+            <?php
+                if(isset($_GET['error'])) {
+                    $error = $_GET['error'];
+                    echo('<div style="grid-area:3/2; margin-top: 2ch;">');
+                    switch($error) {
+                        case 500:
+                            echo('Sorry, there was an issue on our end.');
+                            break;
+                        case 401:
+                            echo('Incorrect username/password combination.');
+                            break;
+                    }
+                    echo('</div>');
+                }
+            ?>
         </main>
     </body>
 </html>
