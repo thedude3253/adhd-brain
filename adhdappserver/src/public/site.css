@@ -24,6 +24,26 @@ nav {
         }
     }
 }
+div.projects {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    overflow: auto;
+}
+div.project {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin: 2%;
+    justify-items: center;
+    h3 {
+        min-width: fit-content;
+        margin-inline-start: 2ch;
+    }
+    * {
+        text-align: center;
+    }
+}
 main {
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -76,6 +96,9 @@ body.darkmode {
         }
     }
     main>form {
+        background-color: #1d1d1d;
+    }
+    div.project {
         background-color: #1d1d1d;
     }
 }

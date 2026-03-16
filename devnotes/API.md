@@ -89,7 +89,7 @@ filter (optional): boolean, if we are looking for all available projects, or jus
 Returns all of the information on a specific project
 **Parameters**
 ```
-session: The session UUID attached to this request
+username: The username of the profile attached to the request
 project: The UUID of the project
 ```
 **Permissions**
